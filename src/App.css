@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+.shoplogo {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 60px;
+  letter-spacing: 0px;
+  word-spacing: 2px;
+  color: #D7F2F7;
+  font-weight: 700;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: italic;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+}
