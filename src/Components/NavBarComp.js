@@ -5,8 +5,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
-import '../CSS/navbar.css'
+import '../CSS/navbar.css';
+
+
+
+import {useDispatch} from 'react-redux';
+import {login,logout} from '../store/userSlice'
+
 function NavBarComp() {
+  const dispatch = useDispatch();
+  const handleLogout=(e)=>{
+    dispatch(logout())
+    localStorage.setItem('token','');
+    localStorage.setItem('name','User');
+    localStorage.setItem('id','');
+  }
   return (
     <Navbar className='navbarbg' expand="lg">
       <Container fluid>
@@ -19,7 +32,9 @@ function NavBarComp() {
             navbarScroll
           >
             <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/signup">Signup</Nav.Link>
             <Nav.Link href="#action2">Link</Nav.Link>
+            <button onClick={(e)=>handleLogout(e)} className='btn btn-primary'>LOGOUT</button>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
